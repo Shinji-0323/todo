@@ -24,10 +24,16 @@
 </div>
 
 <div class="todo__content">
+    <div class="section__title">
+        <h2>新規作成</h2>
+    </div>
     <form class="create-form" action="/todos" method="post">
         @csrf
         <div class="create-form__item">
-            <input class="create-form__item-input" type="text" name="content">
+            <input class="create-form__item-input" type="text" name="content"　value="{{ old('content') }}"/>
+            <select class="create-form__item-select">
+                option value="">カテゴリ</option>
+            </select>
         </div>
         <div class="create-form__button">
             <button class="create-form__button-submit" type="submit">作成</button>
