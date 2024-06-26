@@ -59,7 +59,7 @@
                 <th class="todo-table__header">
                     <span class="todo-table__header-span">Todo</span>
                     <span class="todo-table__header-span">カテゴリ</span>
-                    </th>
+                </th>
             </tr>
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
