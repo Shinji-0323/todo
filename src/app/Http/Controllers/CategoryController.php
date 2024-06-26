@@ -7,10 +7,19 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function categories()
+    public function index()
     {
         $categories = Category::all();
 
-        return view('categories', compact('categories'));
+        return view('category', compact('categories'));
+    }
+
+    public function store(Request $request)
+    {
+        $category = $request->only(['name']);
+    Category::create($category);
+
+    return redirect('/categories')->with('message', 'カテゴリを作成しました');
+
     }
 }

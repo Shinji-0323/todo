@@ -69,7 +69,7 @@
                     @csrf
                     <div class="update-form__item">
                     <input class="update-form__item-input" type="text" name="content" value="{{ $todo['content'] }}">
-                    <input type="hidden" name="id" value="{{ $todo['id'] }}">
+                    <input type="hidden" name="id" value="{{ $todo['id'] }}" />
                     </div>
                     <div class="update-form__item">
                         <p class="update-form__item-p">Category 1</p>
@@ -80,14 +80,13 @@
                 </form>
                 </td>
                 <td class="todo-table__item">
-                <form class="delete-form" action="/todos/delete" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <div class="delete-form__button">
-                        <input type="hidden" name="id" value="{{ $todo['id'] }}">
-                    <button class="delete-form__button-submit" type="submit">削除</button>
-                    </div>
-                </form>
+                    <form class="delete-form" action="/todos/delete" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <div class="delete-form__button">
+                            <button class="delete-form__button-submit" type="submit">削除</button>
+                        </div>
+                    </form>
                 </td>
             </tr>
             @endforeach
